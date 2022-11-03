@@ -1,0 +1,14 @@
+[
+    {
+      "longName": "dataPath",
+      "shortName": "d",
+      "argType": "string",
+      "explanation": "data path"
+    },
+    {
+      "longName": "outputPath",
+      "shortName": "o",
+      "argType": "string",
+      "explanation": "data path"
+    }
+]

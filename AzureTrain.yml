@@ -1,0 +1,21 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: |
+  FILENAME=libtensorflow-gpu-linux-x86_64-2.5.0.tar.gz
+  wget -q --no-check-certificate https://storage.googleapis.com/tensorflow/libtensorflow/${FILENAME}
+  tar -C /usr/local -xzf ${FILENAME}
+  ldconfig /usr/local/lib
+  cd code
+  dotnet restore
+  dotnet build
+  dotnet run --dataPath ${{inputs.data_dir}} --outputPath outputs --log-file-path outputs/logs --verbosity q
+code: .
+inputs:
+  data_dir:
+    type: uri_folder
+    path: azureml:flower_data:1
+experiment_name: tf-image-training
+environment: 
+  build:
+    path: .
+    dockerfile_path: Dockerfile
+compute: azureml:GPUCluster
