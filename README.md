@@ -2,6 +2,14 @@
 
 This is an example for .NET Machine Learning with Azure ML
 
+I talk about in .NET Conf too
+
+<img src="./image/cover.jpg"/>
+
+You can down load the slide here <a href="./pdf/dotNETDP.pdf">Deep Learning in .NET</a>
+
+
+
 ## **A. Preparation**
 
 Build an Azure Machine Learning service environment from the Azure Portal, because you need to use GPU, so remember to select "West US2" for the region
